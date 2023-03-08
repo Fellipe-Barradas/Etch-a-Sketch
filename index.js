@@ -1,10 +1,16 @@
 const submit  = document.querySelector('#submit')
 const layout = document.querySelector('.canvas')
-
+const grayTons= document.querySelector('#graytons')
+const rainbow=document.querySelector('#rainbow')
+const blackBtn = document.querySelector('#blackBtn')
+const eraser = document.querySelector('#eraser')
 
 submit.addEventListener('click', initializate)
-
 function initializate(){
+    grayTons.addEventListener('click',grayDraw)
+    rainbow.addEventListener('click', randomDraw)
+    blackBtn.addEventListener('click',draw)
+    eraser.addEventListener('click', eraserExe)
     const widthCanvas = document.querySelector('#canvasX').value
     const heightCanvas = document.querySelector('#canvasY').value
     let boxSize = size(widthCanvas, heightCanvas)
@@ -31,7 +37,6 @@ const resizeTiles = (tile) =>{
         tile.style.height = '2px' 
     }
 }
-
 const size = (a, b)=>{
     if(a <= 100 && b <=100 && a == b){
         return a * b 
@@ -45,7 +50,6 @@ const draw = ()=>{
         
     }))
 }
-
 function createTiles(size){
     for(let tile = 0; tile < size; tile++){
         const tiles = document.createElement('div')
@@ -64,5 +68,44 @@ function clearCanvas(){
         tile.style.background = 'white'
         
     })
+}
+const grayDraw= ()=>{
+    let color = ['#ffffff','#f1f1f1',"#eeeeee","#d2d2d2","#a1a1a1", "#7c7c7c", "#5e5e5e","#3e3e3e", "#202020"]
+    let i = 0
+    const tiles = document.querySelectorAll('.grid')
+    tiles.forEach(tile => {
+        tile.addEventListener('mouseover', ()=>{
+           const currentColor = color[i]
+           tile.style.background = currentColor
+           if(i==color.length){
+            i=0
+           }else{
+           i++
+        }
+        })
+    })
+}
+const randomDraw=()=>{
+    const tiles = document.querySelectorAll('.grid')
+    tiles.forEach(tile=>tile.addEventListener('mouseover',()=>{
+        const currentColor = setColor()
+        tile.style.background = currentColor
+    }))
+}
+const setColor=()=>{
+    let color = '#'
+    let letters = '0123456789ABCDEF'
+    for(let i = 0; i < 6; i++){
+        color+=letters[Math.floor(Math.random()*16)]
+    }
+    return color
+}
+const eraserExe =()=>{
+    const tiles = document.querySelectorAll('.grid')
+    tiles.forEach(tile=>tile.addEventListener('mouseover',()=>{
+        tile.style.background = 'white'
+        
+    }))
+    
 }
 initializate()

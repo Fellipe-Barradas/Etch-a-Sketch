@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif
+}
+body{
+    background-color:#25807E ;
+}
+#content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+#content h1{
+    font-size: 2.5rem;
+    padding-right: 10px;
+    color: rgba(0, 0, 0, 0.76);
+
+    background-image: linear-gradient(to right, #25807ee5,#96fffd77,#49fffcb6);
+}
+#content h1 span{
+    color: rgba(255, 255, 255, 0.74);
+}
+.config{
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    margin-top: 50px;
+    width: 500px;
+    background-color: 
+    rgba(128, 128, 128, 0.719)
+    ;
+    padding: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.config input[type='number']{
+    width: 40px;
+    margin-right: 10px;
+    margin-left: 0px;
+    align-self: center;
+}
+.config div{
+    align-self: center;
+}
+input{
+    width: 100px;
+    margin-left: 20px;
+}
+#submit{
+    padding: 0px;
+    width: 55px;
+    text-align: center;
+}
+.canvas{
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.grid{
+    width: 15px;
+    display: none;
+    height: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.144);
+    background-color: antiquewhite;
+}
+.grid:hover, .grid:focus{
+    background-color: gray;
+}

@@ -29,25 +29,47 @@ body{
     display: flex;
     margin-top: 50px;
     width: 500px;
-    background-color: 
-    rgba(128, 128, 128, 0.719)
-    ;
     padding: 5px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
 .config input[type='number']{
-    width: 40px;
+    width: 45px;
     margin-right: 10px;
     margin-left: 0px;
     align-self: center;
+    border-radius: 0px;
+    background-color: white;
+    padding: 10px;
+    color: black;
+    padding: 5px;
+   
 }
 .config div{
     align-self: center;
 }
+.config label{
+    font-weight: bold;
+    font-size: 1.3rem;
+    align-self: flex-start;
+    justify-self: center;
+}
 input{
-    width: 100px;
+    width: 130px;
     margin-left: 20px;
+    background-color:#49fffcb6 ;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.349);
+    font-weight: bold;
+}
+input:hover{
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.699);
+    background-color:#42e2e0b6 ;
+    
 }
 #submit{
     padding: 0px;
@@ -66,7 +88,4 @@ input{
     height: 15px;
     border: 1px solid rgba(0, 0, 0, 0.144);
     background-color: white;
-}
-.grid:hover, .grid:focus{
-    background-color: gray;
 }

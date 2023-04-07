@@ -11,25 +11,21 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 #content h1{
     font-size: 2.5rem;
     padding-right: 10px;
     color: rgba(0, 0, 0, 0.76);
-
     background-image: linear-gradient(to right, #25807ee5,#96fffd77,#49fffcb6);
 }
 #content h1 span{
     color: rgba(255, 255, 255, 0.74);
 }
 .config{
-    align-self: center;
-    justify-self: center;
-    display: flex;
-    margin-top: 50px;
-    width: 500px;
-    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 30px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
@@ -43,10 +39,6 @@ body{
     padding: 10px;
     color: black;
     padding: 5px;
-   
-}
-.config div{
-    align-self: center;
 }
 .config label{
     font-weight: bold;
@@ -69,12 +61,6 @@ input{
 input:hover{
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.699);
     background-color:#42e2e0b6 ;
-    
-}
-#submit{
-    padding: 0px;
-    width: 55px;
-    text-align: center;
 }
 .canvas{
     display: grid;
@@ -88,4 +74,39 @@ input:hover{
     height: 15px;
     border: 1px solid rgba(0, 0, 0, 0.144);
     background-color: white;
+}
+.colors{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+@media screen and (max-width:720px){
+    .config{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .colors{
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+    }
+}
+@media screen and (max-width:600px){
+    #content h1{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .config label{
+        font-size: 1rem;
+    }
+    .config input{
+        font-size: 0.8rem;
+        width: 90px;
+    }
+    input{
+        width: 70px;
+        font-size: 0.7rem;
+    }
+    .grid{
+        width: 10px;
+        height: 10px;
+    }
 }
